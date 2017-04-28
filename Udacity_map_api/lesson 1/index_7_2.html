@@ -25,6 +25,9 @@
   </div>
   <script>
     var map;
+    //Creamos un nuevo array en blanco para todos los amrcadores
+    var markers =[];
+    
     function initMap(){
   // constructor para crear un nuevo mapa , unicamente "center" y "zoom" es requerido.
       map= new google.maps.Map(document.getElementById('map'),{
