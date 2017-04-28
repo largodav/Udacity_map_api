@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maps api curso udacity</title>
+  <style>
+  html,body{
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map{
+    height: 100%;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div id="map">
+
+  </div>
+  <script>
+    var map;
+    function initMap(){
+  // constructor para crear un nuevo mapa , unicamente "center" y "zoom" es requerido.
+      map= new google.maps.Map(document.getElementById('map'),{
+      center: {lat:40.7413549, lng: -73.9980244},
+      zoom: 13
+    });
+//Para mostrar varios puntos , creamos una matriz de objetos...Estos datos
+//deverian provenir de B.D
+var locations= [
+  {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
+  {title: 'Chelsea Loft', location: {lat: 40.7444883, lng: -73.9949465}},
+  {title: 'Union Square Open Floor Plan', location: {lat: 40.7347062, lng: -73.9895759}},
+  {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
+  {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
+  {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}}
+];
+}
+
+  </script>
+  <!-- script para llamar al api de google.maps con nuestra KEY  -->
+<script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB49ZWZsGmmmstuhrB8FAdjgmOzK8vAFco&v=3&callback=initMap">
+
+
+</script>
+</body>
+</html>

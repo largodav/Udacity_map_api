@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maps api curso udacity</title>
+  <style>
+  html,body{
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map{
+    height: 100%;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div id="map">
+
+  </div>
+  <script>
+    var map;
+    function initMap(){
+  // constructor para crear un nuevo mapa , unicamente "center" y "zoom" es requerido.
+      map= new google.maps.Map(document.getElementById('map'),{
+      center: {lat:40.7413549, lng: -73.9980244},
+      zoom: 13
+    });
+    var tribeca= {lat: 40.719526, lng: -74.0089934};
+    //creamos un nuevo marcador para mostralo en el mapa
+    var marker = new google.maps.Marker({
+      position: tribeca,
+      map: map,
+      title: 'Primer marcador'
+    });
+    //creamos una ventana de informacion para ell marcador
+    var infowindow = new google.maps.InfoWindow({
+      content: 'Esto es una ventana de informacion'+ ' preparado para empezar?'
+    });
+    //creamos un detector de eventos que muestre la ventana de informacion
+    marker.addListener('click',function(){
+      infowindow.open(map,marker);
+    });
+  }
+  </script>
+  <!-- script para llamar al api de google.maps con nuestra KEY  -->
+<script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB49ZWZsGmmmstuhrB8FAdjgmOzK8vAFco&v=3&callback=initMap">
+
+
+</script>
+</body>
+</html>
